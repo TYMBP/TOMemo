@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		105E45071714630F00D6343A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105E45061714630F00D6343A /* UIKit.framework */; };
+		105E45091714630F00D6343A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105E45081714630F00D6343A /* Foundation.framework */; };
+		105E450B1714630F00D6343A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105E450A1714630F00D6343A /* CoreGraphics.framework */; };
+		105E45111714630F00D6343A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 105E450F1714630F00D6343A /* InfoPlist.strings */; };
+		105E45131714630F00D6343A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E45121714630F00D6343A /* main.m */; };
+		105E45171714630F00D6343A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E45161714630F00D6343A /* AppDelegate.m */; };
+		105E45191714630F00D6343A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 105E45181714630F00D6343A /* Default.png */; };
+		105E451B1714630F00D6343A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105E451A1714630F00D6343A /* Default@2x.png */; };
+		105E451D1714630F00D6343A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105E451C1714630F00D6343A /* Default-568h@2x.png */; };
+		105E452C1714688600D6343A /* TOMemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E452B1714688600D6343A /* TOMemoController.m */; };
+		105E452F171468A900D6343A /* TODb.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E452E171468A900D6343A /* TODb.m */; };
+		105E4532171468BA00D6343A /* TOMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E4531171468BA00D6343A /* TOMemo.m */; };
+		105E4535171468EE00D6343A /* TOMemoTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E4534171468EE00D6343A /* TOMemoTableController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		105E45031714630F00D6343A /* TOMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TOMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		105E45061714630F00D6343A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		105E45081714630F00D6343A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		105E450A1714630F00D6343A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		105E450E1714630F00D6343A /* TOMemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TOMemo-Info.plist"; sourceTree = "<group>"; };
+		105E45101714630F00D6343A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		105E45121714630F00D6343A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		105E45141714630F00D6343A /* TOMemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TOMemo-Prefix.pch"; sourceTree = "<group>"; };
+		105E45151714630F00D6343A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		105E45161714630F00D6343A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		105E45181714630F00D6343A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		105E451A1714630F00D6343A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		105E451C1714630F00D6343A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		105E452A1714688600D6343A /* TOMemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMemoController.h; sourceTree = "<group>"; };
+		105E452B1714688600D6343A /* TOMemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMemoController.m; sourceTree = "<group>"; };
+		105E452D171468A900D6343A /* TODb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TODb.h; sourceTree = "<group>"; };
+		105E452E171468A900D6343A /* TODb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODb.m; sourceTree = "<group>"; };
+		105E4530171468BA00D6343A /* TOMemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMemo.h; sourceTree = "<group>"; };
+		105E4531171468BA00D6343A /* TOMemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMemo.m; sourceTree = "<group>"; };
+		105E4533171468EE00D6343A /* TOMemoTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMemoTableController.h; sourceTree = "<group>"; };
+		105E4534171468EE00D6343A /* TOMemoTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMemoTableController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		105E45001714630F00D6343A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105E45071714630F00D6343A /* UIKit.framework in Frameworks */,
+				105E45091714630F00D6343A /* Foundation.framework in Frameworks */,
+				105E450B1714630F00D6343A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		105E44FA1714630F00D6343A = {
+			isa = PBXGroup;
+			children = (
+				105E4525171463A300D6343A /* Views */,
+				105E45241714638100D6343A /* Controllers */,
+				105E45231714634A00D6343A /* Models */,
+				105E450C1714630F00D6343A /* TOMemo */,
+				105E45051714630F00D6343A /* Frameworks */,
+				105E45041714630F00D6343A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		105E45041714630F00D6343A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				105E45031714630F00D6343A /* TOMemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		105E45051714630F00D6343A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				105E45061714630F00D6343A /* UIKit.framework */,
+				105E45081714630F00D6343A /* Foundation.framework */,
+				105E450A1714630F00D6343A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		105E450C1714630F00D6343A /* TOMemo */ = {
+			isa = PBXGroup;
+			children = (
+				105E45151714630F00D6343A /* AppDelegate.h */,
+				105E45161714630F00D6343A /* AppDelegate.m */,
+				105E450D1714630F00D6343A /* Supporting Files */,
+			);
+			path = TOMemo;
+			sourceTree = "<group>";
+		};
+		105E450D1714630F00D6343A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				105E450E1714630F00D6343A /* TOMemo-Info.plist */,
+				105E450F1714630F00D6343A /* InfoPlist.strings */,
+				105E45121714630F00D6343A /* main.m */,
+				105E45141714630F00D6343A /* TOMemo-Prefix.pch */,
+				105E45181714630F00D6343A /* Default.png */,
+				105E451A1714630F00D6343A /* Default@2x.png */,
+				105E451C1714630F00D6343A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		105E45231714634A00D6343A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				105E452D171468A900D6343A /* TODb.h */,
+				105E452E171468A900D6343A /* TODb.m */,
+				105E4530171468BA00D6343A /* TOMemo.h */,
+				105E4531171468BA00D6343A /* TOMemo.m */,
+			);
+			name = Models;
+			path = TOMemo;
+			sourceTree = "<group>";
+		};
+		105E45241714638100D6343A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				105E452A1714688600D6343A /* TOMemoController.h */,
+				105E452B1714688600D6343A /* TOMemoController.m */,
+				105E4533171468EE00D6343A /* TOMemoTableController.h */,
+				105E4534171468EE00D6343A /* TOMemoTableController.m */,
+			);
+			name = Controllers;
+			path = TOMemo;
+			sourceTree = "<group>";
+		};
+		105E4525171463A300D6343A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			path = TOMemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		105E45021714630F00D6343A /* TOMemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 105E45201714630F00D6343A /* Build configuration list for PBXNativeTarget "TOMemo" */;
+			buildPhases = (
+				105E44FF1714630F00D6343A /* Sources */,
+				105E45001714630F00D6343A /* Frameworks */,
+				105E45011714630F00D6343A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TOMemo;
+			productName = TOMemo;
+			productReference = 105E45031714630F00D6343A /* TOMemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		105E44FB1714630F00D6343A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = yamatomo;
+			};
+			buildConfigurationList = 105E44FE1714630F00D6343A /* Build configuration list for PBXProject "TOMemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 105E44FA1714630F00D6343A;
+			productRefGroup = 105E45041714630F00D6343A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				105E45021714630F00D6343A /* TOMemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		105E45011714630F00D6343A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105E45111714630F00D6343A /* InfoPlist.strings in Resources */,
+				105E45191714630F00D6343A /* Default.png in Resources */,
+				105E451B1714630F00D6343A /* Default@2x.png in Resources */,
+				105E451D1714630F00D6343A /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		105E44FF1714630F00D6343A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				105E45131714630F00D6343A /* main.m in Sources */,
+				105E45171714630F00D6343A /* AppDelegate.m in Sources */,
+				105E452C1714688600D6343A /* TOMemoController.m in Sources */,
+				105E452F171468A900D6343A /* TODb.m in Sources */,
+				105E4532171468BA00D6343A /* TOMemo.m in Sources */,
+				105E4535171468EE00D6343A /* TOMemoTableController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		105E450F1714630F00D6343A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				105E45101714630F00D6343A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		105E451E1714630F00D6343A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		105E451F1714630F00D6343A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		105E45211714630F00D6343A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TOMemo/TOMemo-Prefix.pch";
+				INFOPLIST_FILE = "TOMemo/TOMemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		105E45221714630F00D6343A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TOMemo/TOMemo-Prefix.pch";
+				INFOPLIST_FILE = "TOMemo/TOMemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		105E44FE1714630F00D6343A /* Build configuration list for PBXProject "TOMemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				105E451E1714630F00D6343A /* Debug */,
+				105E451F1714630F00D6343A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		105E45201714630F00D6343A /* Build configuration list for PBXNativeTarget "TOMemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				105E45211714630F00D6343A /* Debug */,
+				105E45221714630F00D6343A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 105E44FB1714630F00D6343A /* Project object */;
+}
