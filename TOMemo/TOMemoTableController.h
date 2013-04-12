@@ -11,6 +11,7 @@
 
 @class DetailViewController;
 
-@interface TOMemoTableController : UITableViewController<TOMemoController>
+//@interface TOMemoTableController : UITableViewController<TOMemoDlegate>
+@interface TOMemoTableController : UITableViewController
 
 @end

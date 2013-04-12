@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class TOMemo;
+
 @interface TODb : NSObject
+
+- (NSMutableArray *)memos;
 
 @end

@@ -7,7 +7,24 @@
 //
 
 #import "TODb.h"
+#import "TOMemo.h"
 
 @implementation TODb
+
+- (id)init {
+  self = [super init];
+  if (self) {
+    
+  }
+  return self;
+}
+
+- (void)dealloc {
+  [super dealloc];
+}
+
+//- (NSArray *)memos {
+//  NSMutableArray *dbmemos = ;
+//}
 
 @end

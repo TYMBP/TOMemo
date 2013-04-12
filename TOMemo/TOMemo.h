@@ -10,9 +10,9 @@
 
 @interface TOMemo : NSObject
 
-@property (nonatomic, assign) NSInteger    bookId; //!識別子
-@property (nonatomic,   copy) NSString*    author; //!著者
-@property (nonatomic,   copy) NSString*     title; //!題名
-@property (nonatomic,   copy) NSDate*   copyright; //!好評年月日
+@property (nonatomic, assign) NSInteger    memoId; //!識別子
+@property (nonatomic,   copy) NSString     *title; //!タイトル
+@property (nonatomic,   copy) NSString  *memoNote; //!メモ
+//@property (nonatomic,   copy) NSDate      *update; //!更新日
 
 @end

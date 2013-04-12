@@ -10,4 +10,13 @@
 
 @implementation TOMemo
 
+@synthesize title,memoId;
+
+- (void)dealloc {
+  self.title = nil;
+  //self.update = nil;
+  //self.memoId = nil;
+  [super dealloc];
+}
+
 @end

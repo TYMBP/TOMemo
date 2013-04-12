@@ -19,7 +19,7 @@
 		105E452C1714688600D6343A /* TOMemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E452B1714688600D6343A /* TOMemoController.m */; };
 		105E452F171468A900D6343A /* TODb.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E452E171468A900D6343A /* TODb.m */; };
 		105E4532171468BA00D6343A /* TOMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E4531171468BA00D6343A /* TOMemo.m */; };
-		105E4535171468EE00D6343A /* TOMemoTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E4534171468EE00D6343A /* TOMemoTableController.m */; };
+		10C7D3BA17170E1200CA8F7E /* TOMemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C7D3B917170E1200CA8F7E /* TOMemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +42,8 @@
 		105E452E171468A900D6343A /* TODb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODb.m; sourceTree = "<group>"; };
 		105E4530171468BA00D6343A /* TOMemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMemo.h; sourceTree = "<group>"; };
 		105E4531171468BA00D6343A /* TOMemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMemo.m; sourceTree = "<group>"; };
-		105E4533171468EE00D6343A /* TOMemoTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMemoTableController.h; sourceTree = "<group>"; };
-		105E4534171468EE00D6343A /* TOMemoTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMemoTableController.m; sourceTree = "<group>"; };
+		10C7D3B817170E1200CA8F7E /* TOMemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMemoViewController.h; sourceTree = "<group>"; };
+		10C7D3B917170E1200CA8F7E /* TOMemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMemoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +131,8 @@
 			children = (
 				105E452A1714688600D6343A /* TOMemoController.h */,
 				105E452B1714688600D6343A /* TOMemoController.m */,
-				105E4533171468EE00D6343A /* TOMemoTableController.h */,
-				105E4534171468EE00D6343A /* TOMemoTableController.m */,
+				10C7D3B817170E1200CA8F7E /* TOMemoViewController.h */,
+				10C7D3B917170E1200CA8F7E /* TOMemoViewController.m */,
 			);
 			name = Controllers;
 			path = TOMemo;
@@ -216,7 +216,7 @@
 				105E452C1714688600D6343A /* TOMemoController.m in Sources */,
 				105E452F171468A900D6343A /* TODb.m in Sources */,
 				105E4532171468BA00D6343A /* TOMemo.m in Sources */,
-				105E4535171468EE00D6343A /* TOMemoTableController.m in Sources */,
+				10C7D3BA17170E1200CA8F7E /* TOMemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +333,7 @@
 				105E45221714630F00D6343A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
