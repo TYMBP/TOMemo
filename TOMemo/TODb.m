@@ -15,6 +15,11 @@
   self = [super init];
   if (self) {
     
+//  memos = [[NSMutableArray alloc] initWithObjects:
+//           @"a",
+//           @"b",
+//           @"c",
+//           nil];
   }
   return self;
 }

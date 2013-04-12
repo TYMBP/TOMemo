@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TOMemoViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@interface TOMemoViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 @end
