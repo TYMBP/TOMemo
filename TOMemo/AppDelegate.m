@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "TOMemoTableController.h"
+#import "TOMemoViewController.h"
 
 @implementation AppDelegate {
   UIWindow *_window;
@@ -25,7 +25,7 @@
   CGRect bounds = [[UIScreen mainScreen] bounds];
   _window = [[UIWindow alloc] initWithFrame:bounds];
   
-  TOMemoTableController *topMemoList = [[[TOMemoTableController alloc] init] autorelease];
+  TOMemoViewController *topMemoList = [[[TOMemoViewController alloc] init] autorelease];
   _navigationController = [[UINavigationController alloc] initWithRootViewController:topMemoList];
   [_window addSubview:_navigationController.view];
   [self.window makeKeyAndVisible];
