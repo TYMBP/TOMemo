@@ -12,6 +12,7 @@
 
 @interface TODb : NSObject
 
-- (NSMutableArray *)memos;
+//@property (nonatomic, copy) NSArray *memos;
+@property (nonatomic, copy) NSArray *memos;
 
 @end
