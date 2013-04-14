@@ -10,7 +10,7 @@
 
 @implementation TOMemo
 
-@synthesize title,memoId;
+@synthesize title,memoId,memoNote;
 
 - (void)dealloc {
   self.title = nil;

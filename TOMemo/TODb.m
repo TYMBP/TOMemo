@@ -15,11 +15,6 @@
   self = [super init];
   if (self) {
     
-//  memos = [[NSMutableArray alloc] initWithObjects:
-//           @"a",
-//           @"b",
-//           @"c",
-//           nil];
   }
   return self;
 }
@@ -28,8 +23,22 @@
   [super dealloc];
 }
 
-//- (NSArray *)memos {
-//  NSMutableArray *dbmemos = ;
-//}
+- (NSArray *)memos {
+ 
+  NSMutableArray *memoList = [[[NSMutableArray alloc] initWithCapacity:0] autorelease];
+  
+  TOMemo *memo = [[TOMemo alloc]init];
+  int x = 1;
+  memo.memoId = x;
+  memo.title = @"tAuthor";
+  memo.memoNote = @"testtest";
+  
+  [memoList addObject:memo];
+  NSLog(@"object memoList:%@",memoList);
+  
+  
+  return memoList;
+}
+
 
 @end

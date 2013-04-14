@@ -24,24 +24,34 @@
   UITableView *tableView;
 }
 
-@synthesize  memos, titles;
+//@synthesize  existMemos, titles;
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-
+  
+  // データ取得
+  self.dbmemos = [[[TODb alloc] init] autorelease];
+  self.titles = [[[NSMutableArray alloc] initWithCapacity:0] autorelease];
+  self.memos = [[[NSMutableDictionary alloc] initWithCapacity:0] autorelease];
+  
+  NSArray *existMemos = [self.dbmemos memos];
+  
+  NSLog(@"viewDidLoad _existMemos:%@",existMemos);
+ 
+  for (TOMemo *memo in existMemos) {
+    [self addNewMemo:memo];
+  }
+  
+//  self.titles = [[[NSMutableArray alloc] initWithCapacity:0] autorelease];
+//  for (id i in [_existMemos keyEnumerator]) {
+//    NSLog(@"t-yamada:existMemos.. %@",i);
+//  }
+    
   tableView = [[[UITableView alloc] init] autorelease];
   tableView.frame = CGRectMake(0, 0, 320, 460-50);
   tableView.dataSource = self;
   tableView.delegate = self;
-//  [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-  
-  memos = [[NSMutableArray alloc] initWithObjects:
-           @"a",
-           @"b",
-           @"c",
-           nil];
-  
   
   // ナビタイトル
   self.title = NSLocalizedString(@"table",@"");
@@ -68,19 +78,28 @@
 - (void)dealloc {
   self.dbmemos = nil;
   self.titles = nil;
-  self.memos = nil;
+  self.memos= nil;
   
   [super dealloc];
 }
 
 // テーブルセクション数取得
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 2;
+  NSLog(@"numberOfSectionsInTableView section: %d",self.titles.count);
+  return self.titles.count;
 }
 
 // テーブル指定セクションの行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return self.memos.count;
+  NSArray *memoByTitle = [self.memos objectForKey:[self.titles objectAtIndex:section]];
+  NSLog(@"numberOfRowInSection:%d",memoByTitle.count);
+  return memoByTitle.count;
+}
+
+// セクション名の取得
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  NSLog(@"titleForHeaderInSection:%@",[self.titles objectAtIndex:section]);
+  return [self.titles objectAtIndex:section];
 }
 
 // 指定位置のセル取得
@@ -88,14 +107,14 @@
   static NSString *CellIdentifier = @"Cell";
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  //NSLog(@"t-yamada: tableveiw methos");
   if (cell == nil) {
     cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//    NSLog(@"t-yamada: test!");
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   }
   
-  cell.textLabel.text = [memos objectAtIndex:indexPath.row];
-  NSLog(@"t-yamada: %d",indexPath.section);
+  TOMemo *memo = [self memoAtIndexPath:indexPath];
+  cell.textLabel.text = memo.title;
+  NSLog(@"cellForRowAtIndexPath : %@",cell.textLabel.text);
   return cell;
 }
 
@@ -106,21 +125,32 @@
 
 // メモ追加ボタン押下
 - (void)addMemo:(id)sender {
-  NSLog(@"test");
+  NSLog(@"push test");
 }
 
 
 // メモの新規追加
 - (void)addNewMemo:(TOMemo *)newMemo {
-  NSMutableArray *memos = [self.memos objectForKey:newMemo.title];
-  if (memos) {
-    [memos addObject:newMemo];
+  NSLog(@"newMemo:%@",newMemo.title);
+  NSMutableArray *memoByTitle = [self.memos objectForKey:newMemo.title];
+
+  if (memoByTitle) {
+    [memoByTitle addObject:newMemo];
   } else {
-    memos = [[[NSMutableArray alloc] initWithCapacity:1] autorelease];
-    [memos addObject:newMemo];
-    [self.memos setObject:memos forKey:newMemo.title];
+    memoByTitle = [[[NSMutableArray alloc] initWithCapacity:1] autorelease];
+    [memoByTitle addObject:newMemo];
+    [self.memos setObject:memoByTitle forKey:newMemo.title];
     [self.titles addObject:newMemo.title];
+    NSLog(@"memos:%@",self.memos);
+    NSLog(@"titles:%@",self.titles);
   }
+}
+
+// 指定された位置のメモを取得
+- (TOMemo *)memoAtIndexPath:(NSIndexPath *)indexPath {
+  NSArray *memoData = [self.memos objectForKey:[self.titles objectAtIndex:indexPath.section]];
+  NSLog(@"memoAtIndexPath:%@",[memoData objectAtIndex:indexPath.row]);
+  return [memoData objectAtIndex:indexPath.row];
 }
 
 - (void)didReceiveMemoryWarning
