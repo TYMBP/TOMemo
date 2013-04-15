@@ -126,6 +126,17 @@
 // メモ追加ボタン押下
 - (void)addMemo:(id)sender {
   NSLog(@"push test");
+  TOMemoController *editor = [[TOMemoController alloc] init];
+  editor.delegage = self;
+  editor.title = NSLocalizedString(@"BOOK_EDIT_NEW_TITLE", @"");
+  
+  UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:editor];
+  navi.navigationBar.barStyle = UIBarStyleBlack;
+  
+  [self.navigationController presentModalViewController:navi animated:YES];
+  [editor release];
+  [navi release];
+  
 }
 
 

@@ -7,32 +7,125 @@
 //
 
 #import "TOMemoController.h"
+#import "TOMemo.h"
 
 @interface TOMemoController ()
+- (void)checkDone;
+- (void)titleTextFieldEditingChanged:(id)sender;
+- (void)memoTextFieldEditingChanged:(id)sender;
+- (void)cancel:(id)sender;
+- (void)done:(id)sender;
 
 @end
 
 @implementation TOMemoController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//@synthesize delegage, memo;
+
+#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+  [super viewDidLoad];
+
+  // 完了ボタン
+  UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+  self.navigationItem.rightBarButtonItem = doneButton;
+  [doneButton release];
+  
+  _titleLabel.text    = NSLocalizedString(@"BOOK_EDIT_LABEL_TITLE", @"");
+  _memoLabel.text    = NSLocalizedString(@"BOOK_EDIT_LABEL_MEMO", @"");
+  
+  _titleTextField.delegate = self;
+  _memoTextField.delegate = self;
+  
+  [_titleTextField addTarget:self action:@selector(titleTextFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
+  [_memoTextField addTarget:self action:@selector(titleTextFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
+  
+  if (self.memo) {
+    _titleTextField.text = self.memo.title;
+    _memoTextField.text = self.memo.memoId;
+  } else {
+    _titleTextField.placeholder = NSLocalizedString(@"BOOK_EDIT_PROMPT_TITLE", @"");
+    _memoTextField.placeholder = NSLocalizedString(@"BOOK_EDIT_PROMPT_MEMO", @"");
+    
+    // キャンセルボタン
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    [cancelButton release];
+  }
+  
+  [self checkDone];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+// Viewが破棄すると発生
+- (void)viewDidUnload {
+  self.memo = nil;
+  
+  [_titleLabel      release]; _titleLabel     = nil;
+  [_titleTextField  release]; _titleTextField = nil;
+  [_memoLabel       release]; _memoLabel      = nil;
+  [_memoTextField   release]; _memoTextField  = nil;
+  
+  [super viewDidUnload];
 }
+
+// メモリを解放
+- (void)dealloc {
+  self.memo = nil;
+  
+  [_titleLabel      release];
+  [_titleTextField  release];
+  [_memoLabel       release];
+  [_memoTextField   release];
+  
+  [super dealloc];
+}
+
+#pragma mark - UITextFieldDelegate methods
+
+// テキストフィールドでリターン押下時に発生
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  [textField resignFirstResponder];
+  return YES;
+}
+
+#pragma mark - Private methods
+
+// 著者テキストフィールドで編集が完了時に発生
+- (void)memoTextFieldEditingChanged:(id)sender {
+  [self checkDone];
+}
+
+// 題名テキストフィールドで編集が完了した時に発生
+- (void)titleTextFieldEditingChanged:(id)sender {
+  [self checkDone];
+}
+
+// 編集を完了できることをチェック
+- (void)checkDone {
+  self.navigationItem.rightBarButtonItem.enabled = (_titleTextField.text.length > 0 && _memoTextField.text.length > 0);
+}
+
+// キャンセルボタンが押された時に発生
+- (void)cancel:(id)sender {
+  [self.delegage addMemoDidFinish:nil];
+}
+
+// 完了ボタン押下時に発生
+- (void)done:(id)sender {
+  TOMemo *newMemo = [[[TOMemo alloc] init] autorelease];
+  newMemo.memoId = self.memo.memoId;
+  newMemo.title  = _titleTextField.text;
+  newMemo.memoNote   = _memoTextField.text;
+  
+  if (self.memo) {
+    [self.delegage editMemoDidFinish:self.memo newMemo:newMemo];
+  } else {
+    [self.delegage addMemoDidFinish:newMemo];
+  }
+}
+
+
 
 @end
