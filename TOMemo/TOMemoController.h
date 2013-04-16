@@ -18,13 +18,12 @@
 
 // 書籍の追加、編集画面を表示
 @interface TOMemoController : UIViewController <UITextFieldDelegate> {
-@private
-  UILabel         *_titleLabel;      // タイトルラベル
-  UITextField     *_titleTextField;  // タイトルテキストフィールド
-  UILabel         *_memoLabel;       // メモラベル
-  UITextField     *_memoTextField;   // メモテキストフィールド
+  @private
+  UILabel      *_titleLabel;
+  UITextField  *_titleTextField;
+  UILabel      *_memoLabel;
+  UITextField  *_memoTextField;
 }
-
 @property (nonatomic, assign) id <TOMemoDelegate> delegage; // メモの追加及び編集画面完了のデリゲート
 @property (nonatomic, retain) TOMemo *memo;  // 編集対象となるメモ
 
