@@ -23,6 +23,12 @@
   [super dealloc];
 }
 
+// 書籍を追加します。
+- (TODb *)add:(TODb *)memo {
+  
+  return memo;
+}
+
 - (NSArray *)memos {
  
   NSMutableArray *memoList = [[[NSMutableArray alloc] initWithCapacity:0] autorelease];

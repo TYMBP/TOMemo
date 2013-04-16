@@ -164,6 +164,24 @@
   return [memoData objectAtIndex:indexPath.row];
 }
 
+// メモの追加　キャンセルボタン押下時（nil）
+- (void)addMemoDidFinish:(TOMemo *)newMemo {
+  NSLog(@"cancel push");
+  if (newMemo) {
+    [self addNewMemo:newMemo];
+    //[self.dbmemos add:newMemo];
+    [tableView reloadData];
+  }
+  [self.navigationController dismissModalViewControllerAnimated:YES];
+}
+
+// メモの編集完了時に発生
+- (void)editMemoDidFinish:(TOMemo *)oldMemo newMemo:(TOMemo *)newMemo {
+  [tableView reloadData];
+  [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

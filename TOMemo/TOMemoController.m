@@ -59,7 +59,7 @@
   
   if (self.memo) {
     _titleTextField.text = self.memo.title;
-    _memoTextField.text = self.memo.memoId;
+    _memoTextField.text = self.memo.memoNote;
   } else {
     _titleTextField.placeholder = NSLocalizedString(@"BOOK_EDIT_PROMPT_TITLE", @"");
     _memoTextField.placeholder = NSLocalizedString(@"BOOK_EDIT_PROMPT_MEMO", @"");
