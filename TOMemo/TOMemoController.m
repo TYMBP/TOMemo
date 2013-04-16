@@ -27,19 +27,34 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  self.view.backgroundColor = [UIColor whiteColor];
 
   // 完了ボタン
   UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
   self.navigationItem.rightBarButtonItem = doneButton;
   [doneButton release];
   
+  _titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(10, 10, 200, 30)] autorelease];
   _titleLabel.text    = NSLocalizedString(@"BOOK_EDIT_LABEL_TITLE", @"");
-  _memoLabel.text    = NSLocalizedString(@"BOOK_EDIT_LABEL_MEMO", @"");
+  [self.view addSubview:_titleLabel];
   
+  _titleTextField = [[[UITextField alloc] initWithFrame:CGRectMake(10, 60, 200, 30)] autorelease];
+  _titleTextField.borderStyle = UITextBorderStyleRoundedRect;
+  [self.view addSubview:_titleTextField];
   _titleTextField.delegate = self;
+  
+  _memoLabel = [[[UILabel alloc] initWithFrame:CGRectMake(10, 100, 200, 30)] autorelease];
+  _memoLabel.text = NSLocalizedString(@"BOOK_EDIT_LABEL_MEMO", @"");
+  [self.view addSubview:_memoLabel];
+  
+  _memoTextField = [[[UITextField alloc] initWithFrame:CGRectMake(10, 150, 300, 250)] autorelease];
+  _memoTextField.borderStyle = UITextBorderStyleRoundedRect;
+  [self.view addSubview:_memoTextField];
   _memoTextField.delegate = self;
   
   [_titleTextField addTarget:self action:@selector(titleTextFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
+  
   [_memoTextField addTarget:self action:@selector(titleTextFieldEditingChanged:) forControlEvents:UIControlEventEditingChanged];
   
   if (self.memo) {
@@ -48,7 +63,7 @@
   } else {
     _titleTextField.placeholder = NSLocalizedString(@"BOOK_EDIT_PROMPT_TITLE", @"");
     _memoTextField.placeholder = NSLocalizedString(@"BOOK_EDIT_PROMPT_MEMO", @"");
-    
+  
     // キャンセルボタン
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     self.navigationItem.leftBarButtonItem = cancelButton;
