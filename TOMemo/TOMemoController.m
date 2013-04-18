@@ -65,7 +65,7 @@
     _memoTextField.placeholder = NSLocalizedString(@"BOOK_EDIT_PROMPT_MEMO", @"");
   
     // キャンセルボタン
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
     self.navigationItem.leftBarButtonItem = cancelButton;
     [cancelButton release];
   }

@@ -125,7 +125,6 @@
 
 // メモ追加ボタン押下
 - (void)addMemo:(id)sender {
-  NSLog(@"push test");
   TOMemoController *editor = [[TOMemoController alloc] init];
   editor.delegage = self;
   editor.title = NSLocalizedString(@"BOOK_EDIT_NEW_TITLE", @"");
@@ -172,6 +171,7 @@
     //[self.dbmemos add:newMemo];
     [tableView reloadData];
   }
+  NSLog(@"cancel : if out:");
   [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
