@@ -39,16 +39,16 @@
   _titleLabel.text    = NSLocalizedString(@"BOOK_EDIT_LABEL_TITLE", @"");
   [self.view addSubview:_titleLabel];
   
-  _titleTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 60, 200, 30)];
+  _titleTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 40, 200, 30)];
   _titleTextField.borderStyle = UITextBorderStyleRoundedRect;
   [self.view addSubview:_titleTextField];
   _titleTextField.delegate = self;
   
-  _memoLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, 200, 30)];
+  _memoLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 70, 200, 30)];
   _memoLabel.text = NSLocalizedString(@"BOOK_EDIT_LABEL_MEMO", @"");
   [self.view addSubview:_memoLabel];
   
-  _memoTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 150, 300, 250)];
+  _memoTextField = [[UITextField alloc] initWithFrame:CGRectMake(10, 100, 300, 250)];
   _memoTextField.borderStyle = UITextBorderStyleRoundedRect;
   [self.view addSubview:_memoTextField];
   _memoTextField.delegate = self;

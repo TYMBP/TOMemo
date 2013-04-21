@@ -20,6 +20,11 @@
 		105E452F171468A900D6343A /* TODb.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E452E171468A900D6343A /* TODb.m */; };
 		105E4532171468BA00D6343A /* TOMemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 105E4531171468BA00D6343A /* TOMemo.m */; };
 		10C7D3BA17170E1200CA8F7E /* TOMemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C7D3B917170E1200CA8F7E /* TOMemoViewController.m */; };
+		765EE0A81723865400164DF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 765EE0A71723865400164DF9 /* Localizable.strings */; };
+		765EE0B01723961C00164DF9 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 765EE0AB1723961C00164DF9 /* FMDatabase.m */; };
+		765EE0B11723961C00164DF9 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 765EE0AD1723961C00164DF9 /* FMDatabaseAdditions.m */; };
+		765EE0B21723961C00164DF9 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 765EE0AF1723961C00164DF9 /* FMResultSet.m */; };
+		765EE0B4172396B600164DF9 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 765EE0B3172396B600164DF9 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,14 @@
 		105E4531171468BA00D6343A /* TOMemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMemo.m; sourceTree = "<group>"; };
 		10C7D3B817170E1200CA8F7E /* TOMemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMemoViewController.h; sourceTree = "<group>"; };
 		10C7D3B917170E1200CA8F7E /* TOMemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMemoViewController.m; sourceTree = "<group>"; };
+		765EE0A71723865400164DF9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		765EE0AA1723961C00164DF9 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		765EE0AB1723961C00164DF9 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		765EE0AC1723961C00164DF9 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		765EE0AD1723961C00164DF9 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		765EE0AE1723961C00164DF9 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		765EE0AF1723961C00164DF9 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		765EE0B3172396B600164DF9 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765EE0B4172396B600164DF9 /* libsqlite3.0.dylib in Frameworks */,
 				105E45071714630F00D6343A /* UIKit.framework in Frameworks */,
 				105E45091714630F00D6343A /* Foundation.framework in Frameworks */,
 				105E450B1714630F00D6343A /* CoreGraphics.framework in Frameworks */,
@@ -63,6 +77,8 @@
 		105E44FA1714630F00D6343A = {
 			isa = PBXGroup;
 			children = (
+				765EE0B3172396B600164DF9 /* libsqlite3.0.dylib */,
+				765EE0A9172395BE00164DF9 /* FMDB */,
 				105E4525171463A300D6343A /* Views */,
 				105E45241714638100D6343A /* Controllers */,
 				105E45231714634A00D6343A /* Models */,
@@ -110,6 +126,7 @@
 				105E45181714630F00D6343A /* Default.png */,
 				105E451A1714630F00D6343A /* Default@2x.png */,
 				105E451C1714630F00D6343A /* Default-568h@2x.png */,
+				765EE0A71723865400164DF9 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -144,6 +161,20 @@
 			);
 			name = Views;
 			path = TOMemo;
+			sourceTree = "<group>";
+		};
+		765EE0A9172395BE00164DF9 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				765EE0AA1723961C00164DF9 /* FMDatabase.h */,
+				765EE0AB1723961C00164DF9 /* FMDatabase.m */,
+				765EE0AC1723961C00164DF9 /* FMDatabaseAdditions.h */,
+				765EE0AD1723961C00164DF9 /* FMDatabaseAdditions.m */,
+				765EE0AE1723961C00164DF9 /* FMResultSet.h */,
+				765EE0AF1723961C00164DF9 /* FMResultSet.m */,
+			);
+			name = FMDB;
+			path = TOMemo/FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +232,7 @@
 				105E45191714630F00D6343A /* Default.png in Resources */,
 				105E451B1714630F00D6343A /* Default@2x.png in Resources */,
 				105E451D1714630F00D6343A /* Default-568h@2x.png in Resources */,
+				765EE0A81723865400164DF9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +249,9 @@
 				105E452F171468A900D6343A /* TODb.m in Sources */,
 				105E4532171468BA00D6343A /* TOMemo.m in Sources */,
 				10C7D3BA17170E1200CA8F7E /* TOMemoViewController.m in Sources */,
+				765EE0B01723961C00164DF9 /* FMDatabase.m in Sources */,
+				765EE0B11723961C00164DF9 /* FMDatabaseAdditions.m in Sources */,
+				765EE0B21723961C00164DF9 /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
