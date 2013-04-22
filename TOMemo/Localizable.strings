@@ -1,0 +1,8 @@
+"BOOK_LIST_TITLE"           = "Books";
+"BOOK_EDIT_NEW_TITLE"       = "New Book";
+"BOOK_EDIT_TITLE"           = "Edit Book";
+"BOOK_EDIT_LABEL_TITLE"     = "Title";
+"BOOK_EDIT_LABEL_AUTHOR"    = "Author";
+"BOOK_EDIT_LABEL_COPYRIGHT" = "Copyright";
+"BOOK_EDIT_PROMPT_TITLE"    = "Please enter a title";
+"BOOK_EDIT_PROMPT_AUTHOR"   = "Please enter a author";
